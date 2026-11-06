@@ -1,0 +1,7 @@
+# A full crontab for a small server. Every line here is fine.
+SHELL=/bin/sh
+MAILTO=ops@example.com
+0 2 * * * /usr/bin/nightly-backup.sh
+30 3 * * 0 /usr/bin/weekly-report.sh
+@weekly /usr/bin/log-cleanup.sh
+0 0 1 * * /usr/bin/monthly-bill.sh

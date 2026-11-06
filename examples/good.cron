@@ -1,0 +1,12 @@
+# A small crontab. Every line here is fine.
+# Weekday backup at 9 in the morning.
+0 9 * * 1-5 /usr/bin/backup.sh
+# Health check every 15 minutes.
+*/15 * * * * /usr/bin/health-check.sh
+# First of January, at midnight.
+0 0 1 JAN * /usr/bin/new-year.sh
+# Noon on weekdays, no command — a bare expression is fine too.
+0 12 * * MON-FRI
+# A shortcut line, and an env line from a crontab.
+@daily /usr/bin/cleanup.sh
+MAILTO=ops@example.com
